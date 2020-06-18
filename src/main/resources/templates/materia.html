@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Materias</title>
+</head>
+<body>
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Please sign up for Bootsnipp <small>It's free!</small></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form" th:action="${enlace}" th:object="${materia}" method="post" >
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" th:field="*{nombre}" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<div>
+			    			<select required th:field="*{docente.cedula}">
+			    			<option value="0" disabled>Seleccione Docente</option>
+			    			<option th:each="doc: ${docentes}" th:value="${doc.cedula}" th:text="${doc.nombre}"> </option>
+			    	
+			    			
+			    			</select>
+			    			
+			    			</div>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+
+</body>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</html>

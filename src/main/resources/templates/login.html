@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="/css/login.css" rel="stylesheet">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
+		<div class="login-form">
+		<form th:action="@{/login}" method="post">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="username" class="label">Username</label>
+					<input id="username" name="username" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="password" class="label">Password</label>
+					<input id="password" name="password" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+			</div>
+			</form>
+			<div class="for-pwd-htm">
+				<div class="group">
+					<label for="user" class="label">Username or Email</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Reset Password">
+				</div>
+				<div class="hr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</html>

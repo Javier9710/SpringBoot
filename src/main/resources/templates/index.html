@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Vista con Spring y thymeleaf</h1>
+	
+
+
+	<a th:href="@{/login}" sec:authorize="!isAuthenticated()">Iniciar
+		Sesion</a>
+
+	<a th:href="@{/logout}" sec:authorize="isAuthenticated()">Cerrar
+		Sesion</a>		
+	
+	<!--
+<h1 th:text="${alumnos.nombre}"></h1>
+<h1 th:text="${alumnos.codigo}"></h1>
+<h1 th:text="${alumnos.email}"></h1>
+ -->
+ 
+ 	<div sec:authorize="isAuthenticated()">
+		<td sec:authorize="${hasRole('ADMIN')}"><a href="/materia/nueva">Registar materia</a></td>
+		</div>
+
+	<table>
+	
+		<tr th:each="mat : ${materias}">
+			<td th:text="${mat.id}"></td>
+			<td th:text="${mat.nombre}"></td>
+			<td><a th:href="${'/materias/'+mat.id}">Visualizar info</a></td>
+
+		</tr>
+
+	</table>
+
+
+</body>
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</html>
